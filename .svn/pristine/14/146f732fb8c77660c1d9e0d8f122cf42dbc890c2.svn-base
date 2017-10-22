@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project InteractiveAutomaton with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.unirender.interaction.automaton.SimpleAutomaton"/>
+                <attribute name="Class-Path" value=". interactiveAutomaton_lib/marytts-client-5.2-jar-with-dependencies.jar interactiveAutomaton_lib/jahmm-0.6.1.jar interactiveAutomaton_lib/dsn.jar interactiveAutomaton_lib/imap.jar interactiveAutomaton_lib/mailapi.jar interactiveAutomaton_lib/pop3.jar interactiveAutomaton_lib/smtp.jar"/>
+            </manifest>
+            <fileset dir="/home/pi/workspace/InteractiveAutomaton/bin"/>
+            <fileset dir="/home/pi/workspace/MaryTTS/bin"/>
+            <fileset dir="/home/pi/workspace/WholeWordSpeechRecognizer/bin"/>
+            <fileset dir="/home/pi/workspace/PlugsController/bin"/>
+        </jar>
+        <delete dir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <mkdir dir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/MaryTTS/lib/marytts-client-5.2-jar-with-dependencies.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/WholeWordSpeechRecognizer/lib/jahmm-0.6.1.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/PlugsController/dsn.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/PlugsController/imap.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/PlugsController/mailapi.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/PlugsController/pop3.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+        <copy file="/home/pi/workspace/PlugsController/smtp.jar" todir="/home/pi/workspace/InteractiveAutomaton/distro/interactiveAutomaton_lib"/>
+    	<copy file="/home/pi/workspace/InteractiveAutomaton/process.properties" todir="/home/pi/workspace/InteractiveAutomaton/distro/"/>
+    </target>
+</project>
