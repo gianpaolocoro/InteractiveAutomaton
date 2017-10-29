@@ -1,7 +1,0 @@
-plugIPAddress=192.168.1.125
-maryPath=/home/pi/workspace/MaryTTSManager/marytts-5.2
-maryVoice=istc-lucia-hsmm
-hotword=UNO
-thresholdHotword=-10000
-thresholdWord=-10000
-modelsPath=/home/pi/workspace/WholeWordSpeechRecognizer/MODELS/
