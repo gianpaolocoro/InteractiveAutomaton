@@ -37,6 +37,7 @@ public class SimpleAutomaton {
 //		String address = "192.168.1.183"; //salotto
 		
 		OrviboSocket socket	= new OrviboSocket(address, 0);
+		
 		while (true){
 			
 			automListener.recognizeHotword(hotword, thresholdHotword, nBest);

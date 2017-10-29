@@ -19,7 +19,8 @@ public class EmbeddedAutomaton {
 	LiveSpeechRecognizer asr;
 	Properties properties;
 	boolean TTSactive;
-
+	LedManager led;
+	
 	public EmbeddedAutomaton(boolean TTSactive,
 			RecognizerPreset recognizerPreset) throws Exception {
 		init(TTSactive, recognizerPreset);
@@ -49,6 +50,7 @@ public class EmbeddedAutomaton {
 			tts.setBlueToothAudio(getUseBlueToothAudio());
 			tts.say("sistema attivato.");
 		}
+		led = new LedManager();
 	}
 
 	public void shutdown() throws Exception {
@@ -129,11 +131,23 @@ public class EmbeddedAutomaton {
 
 		boolean caught = false;
 		while (!caught) {
+			led.off();
 			String word = asr.listenAndRecognize();
+			led.on();
 			caught = analyseResult(word, hotword, threshold, maxNBest);
+			if (caught){
+				blink();
+			}
 		}
 	}
 
+	public void blink(){
+		led.off();
+		led.on();
+		led.off();
+		led.on();
+		led.off();
+	}
 	public boolean analyseResult(String word, String hotword, double threshold, int maxNBest){
 		boolean caught = false;
 		
@@ -164,11 +178,16 @@ public class EmbeddedAutomaton {
 	
 	public boolean recognizeOneShot(String hotword, double threshold, int maxNBest)
 			throws Exception {
-
+		led.off();
 		String word = asr.listenAndRecognize();
-
-		return analyseResult(word, hotword, threshold, maxNBest);
+		led.on();
+		boolean caught = analyseResult(word, hotword, threshold, maxNBest);
+		if (caught)
+			blink();
+		else
+			led.off();
 		
+		return caught;
 	}
 
 }
