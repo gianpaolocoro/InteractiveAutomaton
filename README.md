@@ -2,7 +2,7 @@
 An interactive automaton for a domotic system that commands a wireless plug and interact with synthesized voice and automatic Speech recognition. Tested on Raspbian but developed in pure Java. Internally using MaryTTS for Linux. This project requires the [MaryTTSManager](https://github.com/gianpaolocoro/MaryTTSManager), the [WholeWordSpeechRecognizer](https://github.com/gianpaolocoro/WholeWordAutomaticSpeechRecognizer), and the [PlugsController](https://github.com/gianpaolocoro/PlugsController)) projects.
 
 ## Software
-The distribution is made up of a Linux software (Windows is available too if MaryTTS - Windows is installed) with scripts to stop and start the interactive automaton. The distro folder contains a compiled version of the software with start and stop scripts.
+The distribution is made up of a Linux software (Windows is available too if MaryTTS - Windows is installed) with scripts to stop and start the interactive automaton. The **distro** folder contains a compiled version of the software with start and stop scripts.
 
 ## Required Software
 
