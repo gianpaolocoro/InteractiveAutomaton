@@ -17,6 +17,22 @@ The distribution is made up of a Linux software (Windows is available too if Mar
 - [Speakers](https://www.amazon.it/gp/product/B00JRW0M32/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1)
 - [Orvibo Wireless Socket S20](https://www.amazon.it/Socket-ORVIBO-controllo-remoto-Android/dp/B01ID0H7D6)
 
+## Installation
+
+```bash
+sudo apt-get update
+sudo apt-get install git
+mkdir /home/pi/workspace/
+cd /home/pi/workspace/
+git clone git@github.com:gianpaolocoro/InteractiveAutomaton.git
+git clone git@github.com:gianpaolocoro/MaryTTSManager.git
+git clone git@github.com:gianpaolocoro/WholeWordAutomaticSpeechRecognizer.git
+git clone git@github.com:gianpaolocoro/PlugsController.git
+cd /home/pi/workspace/InteractiveAutomaton/distro
+./startInteractionAutomaton.sh
+./stopInteractionAutomaton.sh (to stop the automaton)
+```
+
 ## Properties File
 The process.properties file allows tuning some parameters, like the sensitivity of the microphone and the accuracy of the Speech recognizer:
 
