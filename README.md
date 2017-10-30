@@ -32,6 +32,9 @@ cd /home/pi/workspace/InteractiveAutomaton/distro
 ./startInteractionAutomaton.sh (wait until you hear the voice)
 ./stopInteractionAutomaton.sh (to stop the automaton)
 ```
+## Visual Communication via LED Blinking
+
+On Rasberry Pi 3, the green Led blinks three times just after a word is correctly recognized, one time when it is not recognized. Thus, you can communicate even if you don't want to (or can't) hear the voice.
 
 ## Properties File
 The process.properties file allows tuning some parameters, like the sensitivity of the microphone and the accuracy of the Speech recognizer:
@@ -64,6 +67,4 @@ modelsPath=/home/pi/workspace/WholeWordSpeechRecognizer/MODELS/
 #### use bluetooth speakers (experimental)
 useBlueToothAudio=false
 
-## Visual Communication via LED Blinking
 
-On Rasberry Pi 3, the green Led blinks three times just after a word is correctly recognized, one time when it is not recognized. Thus, you can communicate even if you don't want to (or can't) hear the voice.
