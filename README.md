@@ -45,7 +45,7 @@ plugIPAddress=192.168.1.125
 maryPath=/home/pi/workspace/MaryTTSManager/marytts-5.2
 #### voice to use
 maryVoice=istc-lucia-hsmm
-#### hotword to activate the assistant
+#### hotword to activate the assistant (choose alternative words from /home/pi/workspace/WholeWordSpeechRecognizer/MODELS/IT/WORDS/)
 hotword=assistente
 #### hotword to confirm the activation of the plug
 activationHotword=si
